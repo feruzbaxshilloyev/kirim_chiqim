@@ -55,7 +55,7 @@ def register_view(request):
                 #     [user.email],
                 #     fail_silently=False
                 # )
-                messages.success(request, "Tasdiqlash kodi emailingizga yuborildi.")
+                messages.success(request, f"Tasdiqlash kodi emailingizga yuborildi. {kod}")
             elif profil.telefon:
                 print(f"Telefon uchun kod: {kod}")
                 messages.success(request, "Tasdiqlash kodi telefoningizga yuborildi .")
@@ -93,11 +93,11 @@ def login_view(request):
             print(code)
             # send_code(user.email, code)
 
-            messages.success(request, 'Login muvaffaqiyatli. Tasdiqlash kodi yuborildi!')
+            messages.success(request, f'Login muvaffaqiyatli. Tasdiqlash kodi yuborildi!  {code}')
             return redirect('profil:verify')
 
         else:
-            messages.error(request, 'Login yoki parol noto‘g‘ri!')
+            messages.error(request, f'Login yoki parol noto‘g‘ri!')
 
     return render(request, 'login.html')
 
