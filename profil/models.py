@@ -8,7 +8,7 @@ class Profil(models.Model):
     manzil = models.CharField(max_length=255, blank=True, null=True)
     tugilgan_sana = models.DateField(blank=True, null=True)
     telefon = models.CharField(max_length=20, blank=True, null=True)
-    tasdiqla_kod = models.CharField(max_length=6, blank=True, null=True)
+    tasdiqla_kod = models.CharField(blank=True, null=True)
     kod_vaqt = models.DateTimeField(auto_now=True)
 
     def __str__(self):

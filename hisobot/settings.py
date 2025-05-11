@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_#(5*a)96r4404bact2rwkw8lh!t087@*j(t9y$zh-oh_(s_)m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ["kirimchiqim-production.up.railway.app"]
-CSRF_TRUSTED_ORIGINS = [
-    "https://kirimchiqim-production.up.railway.app"
-]
+DEBUG = True
+ALLOWED_HOSTS = ['*']
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://kirimchiqim-production.up.railway.app"
+# ]
 
 # Application definition
 
@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'profil',
     'kirim_chiqim',
     'api',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'modeltranslation',
     'widget_tweaks',
 
 ]
