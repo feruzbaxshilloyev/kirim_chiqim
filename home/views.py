@@ -52,3 +52,7 @@ def home_view(request):
         'valuta': valuta,
     }
     return render(request, 'home.html', context)
+
+
+def contact(request):
+    return render(request, 'contact.html')

@@ -1,3 +1,4 @@
+from collections import defaultdict
 from decimal import Decimal
 
 from django.db.models import Sum
@@ -17,8 +18,8 @@ def umumiy_hisobot(request):
     uchun = request.GET.get('uchun')
     vals = Valyuta.objects.all()
 
-    kirimlar = Kirim.objects.filter(user=user)
-    chiqimlar = Chiqim.objects.filter(user=user)
+    kirimlar = Kirim.objects.filter(user=user).order_by('-sana')
+    chiqimlar = Chiqim.objects.filter(user=user).order_by('-sana')
 
     if start_date:
         kirimlar = kirimlar.filter(sana__gte=start_date)
@@ -163,22 +164,39 @@ def kurs_kiritish(request):
 
             jami_kirim = Decimal(0)
             jami_chiqim = Decimal(0)
+
+            valyuta_statistikasi = defaultdict(lambda: {
+                'kirim': Decimal(0),
+                'chiqim': Decimal(0),
+                'kirim_asosiy': Decimal(0),
+                'chiqim_asosiy': Decimal(0),
+            })
+
             for kirim in kirimlar:
                 kurs = kurslar.get(kirim.valuta.id, Decimal(1))
+                valyuta_statistikasi[kirim.valuta.id]['kirim'] += kirim.summa
+                valyuta_statistikasi[kirim.valuta.id]['kirim_asosiy'] += kirim.summa * kurs
                 jami_kirim += kirim.summa * kurs
 
             for chiqim in chiqimlar:
                 kurs = kurslar.get(chiqim.valuta.id, Decimal(1))
+                valyuta_statistikasi[chiqim.valuta.id]['chiqim'] += chiqim.summa
+                valyuta_statistikasi[chiqim.valuta.id]['chiqim_asosiy'] += chiqim.summa * kurs
                 jami_chiqim += chiqim.summa * kurs
 
             balans = jami_kirim - jami_chiqim
 
             kurslar_qiymatlari = []
             for val in valyutalar:
+                statistik = valyuta_statistikasi[val.id]
                 kurs_qiymati = kurslar.get(val.id, Decimal(1))
                 kurslar_qiymatlari.append({
                     'valyuta': val,
-                    'kurs': kurs_qiymati
+                    'kurs': kurs_qiymati,
+                    'kirim': round(statistik['kirim'], 2),
+                    'chiqim': round(statistik['chiqim'], 2),
+                    'kirim_asosiy': round(statistik['kirim_asosiy'], 2),
+                    'chiqim_asosiy': round(statistik['chiqim_asosiy'], 2),
                 })
 
             return render(request, 'kurs_natija.html', {
@@ -188,6 +206,7 @@ def kurs_kiritish(request):
                 'jami_chiqim': round(jami_chiqim, 2),
                 'balans': round(balans, 2),
             })
+
     else:
         form = ValyutaKursForm(user=request.user)
 
@@ -201,7 +220,7 @@ def kirim(request):
     summa_type = request.GET.get('summa_type')
     kimdan = request.GET.get('kimdan')
 
-    kirimlar = Kirim.objects.filter(user=request.user)
+    kirimlar = Kirim.objects.filter(user=request.user).order_by('-sana')
 
     if start_date:
         kirimlar = kirimlar.filter(sana__gte=start_date)
@@ -254,7 +273,7 @@ def chiqim(request):
     summa_type = request.GET.get('summa_type')
     uchun = request.GET.get('uchun')
 
-    chiqimlar = Chiqim.objects.filter(user=request.user)
+    chiqimlar = Chiqim.objects.filter(user=request.user).order_by('-sana')
 
     if start_date:
         chiqimlar = chiqimlar.filter(sana__gte=start_date)

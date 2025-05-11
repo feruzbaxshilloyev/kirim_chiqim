@@ -15,7 +15,7 @@
             padding: 2rem 0;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
         }
         .card {
@@ -52,6 +52,9 @@
         }
         .table tbody tr:hover {
             background: #e5e7eb;
+        }
+        .table tbody tr:nth-child(odd) {
+            background: linear-gradient(to right, #f1f5f9, #e2e8f0);
         }
         .summary {
             margin-top: 2rem;
@@ -139,37 +142,49 @@
             <table class="table table-bordered table-striped shadow-sm">
                 <thead>
                     <tr>
-                        <th>Valyuta</th>
+                        <th>Valyuta 💱</th>
                         <th>Kurs</th>
+                        <th>Kirim (valyutada)</th>
+                        <th>Chiqim (valyutada)</th>
+                        <th>Kirim ({{ asosiy.short }})</th>
+                        <th>Chiqim ({{ asosiy.short }})</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for item in kurslar_qiymatlari %}
                     <tr>
-                        <td>{{ item.valyuta.short }}</td>
-                        <td>{{ item.kurs }}</td>
-                    </tr>
-                    {% empty %}
-                    <tr>
-                        <td colspan="2" class="text-center text-muted">Hozircha ma'lumot yo‘q</td>
+                        <td><strong>{{ item.valyuta.nom }}</strong> ({{ item.valyuta.short }})</td>
+                        <td>1 {{ item.valyuta.short }} = {{ item.kurs }} {{ asosiy.short }}</td>
+                        <td><span style="color: {% if item.kirim > 0 %} green {% endif %}">{{ item.kirim }}</span></td>
+                        <td><span style="color: {% if item.chiqim > 0 %} red {% endif %}">{{ item.chiqim }}</span></td>
+                        <td><span style="color: {% if item.kirim_asosiy > 0 %} green {% endif %}">{{ item.kirim_asosiy }}</span></td>
+                        <td><span style="color: {% if item.chiqim_asosiy > 0 %} red {% endif %}">{{ item.chiqim_asosiy }}</span></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
 
             <div class="summary">
-                <p><strong>Jami kirim ({{ asosiy.short }}):</strong> {{ jami_kirim }}</p>
-                <p><strong>Jami chiqim ({{ asosiy.short }}):</strong> {{ jami_chiqim }}</p>
-                <p><strong>Balans ({{ asosiy.short }}):</strong> {{ balans }}</p>
+                <p><strong>Jami kirim:</strong><span style="color: green"> {{ jami_kirim }} </span><strong>{{ asosiy.short }}</strong></p>
+                <p><strong>Jami chiqim:</strong><span style="color: red"> {{ jami_chiqim }} </span><strong>{{ asosiy.short }}</strong></p>
+                <p>
+                    <strong>Balans:</strong>
+                    <span style="color: {% if balans > 0 %}blue{% elif balans < 0 %}red{% else %}#333{% endif %}; font-weight: bold;">
+                        {{ balans }}
+                    </span>
+                    <strong>{{ asosiy.short }}</strong>
+                </p>
             </div>
 
-            <a href="{% url 'kirim:hisobot' %}" class="btn btn-secondary mt-3">🔙 Orqaga</a>
+            <a href="{% url 'kirim:hisobot' %}" class="btn btn-secondary mt-3">
+                ⬅️ Orqaga
+            </a>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Tugma va jadvalga puls animatsiyasi qo‘shish
+        // Puls animatsiyasi
         document.querySelectorAll('.btn, .table, .summary').forEach(item => {
             item.style.animation = 'pulse 1.5s ease-in-out';
             item.addEventListener('animationend', () => {

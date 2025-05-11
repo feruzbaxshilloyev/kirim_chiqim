@@ -70,7 +70,7 @@ class ValyutaKursForm(forms.Form):
 
         for val in valyutalar:
             self.fields[f'kurs_{val.id}'] = forms.DecimalField(
-                label=f"{val.name} → asosiy valyutadagi qiymati",
+                label=f"1 {val.short} = ",
                 required=False,
-                decimal_places=4
+                decimal_places=7
             )

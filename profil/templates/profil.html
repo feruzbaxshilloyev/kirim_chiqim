@@ -148,17 +148,32 @@
 <div class="container my-5">
     <!-- Header -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="text-primary">Profil</h2>
+
         <div class="d-flex gap-2">
-            <a href="{% url 'kirim:hisobot' %}" class="btn btn-outline-secondary">🔙 Hisobotga qaytish</a>
-            <a href="{% url 'home:home' %}" class="btn btn-outline-success">🏠 Bosh sahifa</a>
-            <a href="{% url 'profil:tahrirlash' %}" class="btn btn-primary">✏️ Tahrirlash</a>
-            <a href="{% url 'profil:logout' %}" class="btn btn-outline-danger">🚪 Chiqish</a>
+                        <a href="{% url 'home:home' %}" class="btn btn-outline-success">
+                                                        <img src="/media/picture/home.png" alt="logout" width="30">
+
+                        </a>
+
+            <a href="{% url 'kirim:hisobot' %}" class="btn btn-outline-secondary">
+                                                                        <img src="/media/picture/back.png" alt="logout" width="30">
+
+            </a>
+<a href="{% url 'home:contact' %}" class="btn btn-primary">
+                    <img src="/media/picture/mess.png" alt="Gmail" width="30">
+                </a>            <a href="{% url 'profil:tahrirlash' %}" class="btn btn-primary">
+                            <img src="/media/picture/update.jpg" alt="logout" width="30">
+
+        </a>
+            <a href="{% url 'profil:logout' %}" class="btn btn-outline-danger">
+                <img src="/media/picture/out.png" alt="logout" width="30">
+</a>
         </div>
     </div>
 
     {% if profil %}
         <div class="card shadow-sm">
+             <h2 class="text-primary">Profil</h2>
             <div class="card-body text-center">
                 <!-- Profil rasmi -->
 <img src="{% if profil.rasm %}{{ profil.rasm.url }}{% else %}{% static 'profil_rasmlari/default.png' %}{% endif %}" alt="Profil rasmi" class="profile-img">                <h4 class="card-title mb-3">{{ request.user.get_full_name }}</h4>
@@ -166,7 +181,6 @@
                 <p><strong>Email:</strong> {{ request.user.email }}</p>
                 <p><strong>Telefon:</strong> {{ profil.telefon }}</p>
                 <p><strong>Manzil:</strong> {{ profil.manzil }}</p>
-                <p><strong>Qo‘shimcha ma’lumot:</strong> {{ profil.qoshimcha }}</p>
             </div>
         </div>
     {% else %}
