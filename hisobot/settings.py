@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,10 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_#(5*a)96r4404bact2rwkw8lh!t087@*j(t9y$zh-oh_(s_)m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
-#
+DEBUG = False
+ALLOWED_HOSTS = ["kirimchiqim-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://kirimchiqim-production.up.railway.app"
+]
 
 # Application definition
 
@@ -146,7 +146,6 @@ LANGUAGE_CODE = 'uz'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
 
 LANGUAGES = [
     ('uz', _('O‘zbek')),
