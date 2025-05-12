@@ -117,6 +117,7 @@ def verify_view(request):
         if profil.tasdiqla_kod == kod:
             messages.success(request, "Tasdiqlash muvaffaqiyatli.")
             profil.is_login = True
+            profil.save()
             return redirect('profil:profil')
         else:
             messages.error(request, "Kod noto‘g‘ri.")
