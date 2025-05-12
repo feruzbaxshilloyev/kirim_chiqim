@@ -165,8 +165,8 @@
             </table>
 
             <div class="summary">
-                <p><strong>Jami kirim:</strong><span style="color: green"><a href="{% url 'kirim:kirim' %}"> {{ jami_kirim }} </a></span><strong>{{ asosiy.short }}</strong></p>
-                <p><strong>Jami chiqim:</strong><span style="color: red"> <a href="{% url 'kirim:chiqim' %}"> {{ jami_chiqim }} </a> </span><strong>{{ asosiy.short }}</strong></p>
+                <p><strong>Jami kirim:</strong><a href="{% url 'kirim:kirim' %}"><span style="color: green"> {{ jami_kirim }}</span> </a><strong>{{ asosiy.short }}</strong></p>
+                <p><strong>Jami chiqim:</strong> <a href="{% url 'kirim:chiqim' %}"> <span style="color: red">{{ jami_chiqim }}</span> </a> <strong>{{ asosiy.short }}</strong></p>
                 <p>
                     <strong>Balans:</strong>
                     <span style="color: {% if balans > 0 %}blue{% elif balans < 0 %}red{% else %}#333{% endif %}; font-weight: bold;">
