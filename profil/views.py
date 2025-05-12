@@ -111,7 +111,6 @@ def login_view(request):
     return render(request, 'login.html')
 
 
-@login_required
 def verify_view(request):
     if request.method == 'POST':
         kod = request.POST.get('kod')
