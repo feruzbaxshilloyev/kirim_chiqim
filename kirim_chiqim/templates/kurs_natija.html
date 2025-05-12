@@ -155,8 +155,8 @@
                     <tr>
                         <td><strong>{{ item.valyuta.nom }}</strong> ({{ item.valyuta.short }})</td>
                         <td>1 {{ item.valyuta.short }} = {{ item.kurs }} {{ asosiy.short }}</td>
-                        <td><span style="color: {% if item.kirim > 0 %} green {% endif %}">{{ item.kirim }}</span></td>
-                        <td><span style="color: {% if item.chiqim > 0 %} red {% endif %}">{{ item.chiqim }}</span></td>
+                        <td><span style="color: {% if item.kirim > 0 %} green {% endif %}"><a href="{% url 'kirim:kirim' %}" >{{ item.kirim }} <a></a></span></td>
+                        <td><span style="color: {% if item.chiqim > 0 %} red {% endif %}"><a href="{% url 'kirim:chiqim' %}" >{{ item.chiqim } <a>}</span></td>
                         <td><span style="color: {% if item.kirim_asosiy > 0 %} green {% endif %}">{{ item.kirim_asosiy }}</span></td>
                         <td><span style="color: {% if item.chiqim_asosiy > 0 %} red {% endif %}">{{ item.chiqim_asosiy }}</span></td>
                     </tr>
