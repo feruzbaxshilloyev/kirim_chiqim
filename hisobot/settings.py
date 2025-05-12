@@ -144,11 +144,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-LANGUAGE_CODE = 'uz'
-
-USE_I18N = True
-USE_L10N = True
-USE_TZ = True
 
 LANGUAGES = [
     ('uz', _('O‘zbek')),
@@ -159,3 +154,5 @@ LANGUAGES = [
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
+
+

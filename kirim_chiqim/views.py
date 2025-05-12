@@ -1,6 +1,7 @@
 from collections import defaultdict
 from decimal import Decimal
 
+from django.contrib.auth.decorators import login_required
 from django.db.models import Sum
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -9,6 +10,7 @@ from .models import Kirim, Chiqim, Valyuta, Kimdan, Uchun
 from .forms import HisobotFilterForm, ChiqimForm, KirimForm, ValyutaForm, UchunForm, KimdanForm, ValyutaKursForm
 
 
+@login_required
 def umumiy_hisobot(request):
     pr = Profil.objects.filter(user=request.user).first()
     if not pr.is_login:
@@ -80,6 +82,7 @@ def umumiy_hisobot(request):
     return render(request, 'umumiy_hisobot.html', ctx)
 
 
+@login_required
 def add_kirim(request):
     pr = Profil.objects.filter(user=request.user).first()
     if not pr.is_login:
@@ -96,6 +99,7 @@ def add_kirim(request):
 
     return render(request, 'add_kirim.html', {'form': form})
 
+@login_required
 
 def add_chiqim(request):
     pr = Profil.objects.filter(user=request.user).first()
@@ -113,6 +117,7 @@ def add_chiqim(request):
 
     return render(request, 'add_chiqim.html', {'form': form})
 
+@login_required
 
 def add_valyuta(request):
     pr = Profil.objects.filter(user=request.user).first()
@@ -130,6 +135,7 @@ def add_valyuta(request):
 
     return render(request, 'add_valyuta.html', {'form': form})
 
+@login_required
 
 def add_uchun(request):
     pr = Profil.objects.filter(user=request.user).first()
@@ -147,6 +153,7 @@ def add_uchun(request):
 
     return render(request, 'add_uchun.html', {'form': form})
 
+@login_required
 
 def add_kimdan(request):
     pr = Profil.objects.filter(user=request.user).first()
@@ -164,6 +171,7 @@ def add_kimdan(request):
 
     return render(request, 'add_kimdan.html', {'form': form})
 
+@login_required
 
 def kurs_kiritish(request):
     pr = Profil.objects.filter(user=request.user).first()
@@ -235,6 +243,7 @@ def kurs_kiritish(request):
 
     return render(request, 'kurs_kiritish.html', {'form': form})
 
+@login_required
 
 def kirim(request):
     pr = Profil.objects.filter(user=request.user).first()
@@ -291,6 +300,7 @@ def kirim(request):
     }
     return render(request, 'kirim.html', context)
 
+@login_required
 
 def chiqim(request):
     pr = Profil.objects.filter(user=request.user).first()

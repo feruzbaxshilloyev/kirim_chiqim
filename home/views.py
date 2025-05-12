@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from datetime import date, timedelta, datetime
@@ -6,7 +7,11 @@ from django.db.models import Sum
 from profil.models import Profil
 
 
+@login_required
 def home_view(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if (not pr.is_login) and (not request.user.is_authenticated):
+        return redirect('profil:login')
 
     today = datetime.today()
     haftalik_hisobot = []
