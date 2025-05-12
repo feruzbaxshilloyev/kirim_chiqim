@@ -155,8 +155,8 @@
                     <tr>
                         <td><strong>{{ item.valyuta.nom }}</strong> ({{ item.valyuta.short }})</td>
                         <td>1 {{ item.valyuta.short }} = {{ item.kurs }} {{ asosiy.short }}</td>
-                        <td><span style="color: {% if item.kirim > 0 %} green {% endif %}"><a href="{% url 'kirim:kirim' %}" >{{ item.kirim }} <a></a></span></td>
-                        <td><span style="color: {% if item.chiqim > 0 %} red {% endif %}"><a href="{% url 'kirim:chiqim' %}" >{{ item.chiqim } <a>}</span></td>
+                        <td><span style="color: {% if item.kirim > 0 %} green {% endif %}">{{ item.kirim }}</span></td>
+                        <td><span style="color: {% if item.chiqim > 0 %} red {% endif %}">{{ item.chiqim }}</span></td>
                         <td><span style="color: {% if item.kirim_asosiy > 0 %} green {% endif %}">{{ item.kirim_asosiy }}</span></td>
                         <td><span style="color: {% if item.chiqim_asosiy > 0 %} red {% endif %}">{{ item.chiqim_asosiy }}</span></td>
                     </tr>
@@ -165,8 +165,8 @@
             </table>
 
             <div class="summary">
-                <p><strong>Jami kirim:</strong><span style="color: green"> {{ jami_kirim }} </span><strong>{{ asosiy.short }}</strong></p>
-                <p><strong>Jami chiqim:</strong><span style="color: red"> {{ jami_chiqim }} </span><strong>{{ asosiy.short }}</strong></p>
+                <p><strong>Jami kirim:</strong><span style="color: green"><a href="{% url 'kirim:kirim %}"> {{ jami_kirim }} </a></span><strong>{{ asosiy.short }}</strong></p>
+                <p><strong>Jami chiqim:</strong><span style="color: red"> <a href="{% url 'kirim:chiqim %}"> {{ jami_chiqim }} </a> </span><strong>{{ asosiy.short }}</strong></p>
                 <p>
                     <strong>Balans:</strong>
                     <span style="color: {% if balans > 0 %}blue{% elif balans < 0 %}red{% else %}#333{% endif %}; font-weight: bold;">
