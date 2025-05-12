@@ -127,5 +127,6 @@ def verify_view(request):
 def logout_view(request):
     pr = Profil.objects.filter(user=request.user).first()
     pr.is_login = False
+    pr.save()
     logout(request)
     return redirect('profil:login')
