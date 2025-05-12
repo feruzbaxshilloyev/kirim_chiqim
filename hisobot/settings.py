@@ -88,7 +88,7 @@ DATABASES = {
     }
 }
 
-LOGIN_URL = 'login'
+LOGIN_URL = 'profil/login/'
 LOGIN_REDIRECT_URL = 'profil'
 LOGOUT_REDIRECT_URL = 'login'
 
