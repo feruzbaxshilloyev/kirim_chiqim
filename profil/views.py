@@ -47,7 +47,7 @@ def register_view(request):
             profil = Profil.objects.create(user=user, tasdiqla_kod=kod)
 
             if user.email:
-                print(f"email uchun kod: {kod}")
+                # print(f"email uchun kod: {kod}")
                 # send_mail(
                 #     'Tasdiqlash kodi',
                 #     f'Sizning tasdiqlash kodingiz: {kod}',
@@ -60,7 +60,7 @@ def register_view(request):
                 print(f"Telefon uchun kod: {kod}")
                 messages.success(request, "Tasdiqlash kodi telefoningizga yuborildi .")
             else:
-                print(kod)
+                # print(kod)
                 messages.warning(request, "Tasdiqlash kodi yuborilmadi: email yoki telefon topilmadi.")
 
             return redirect('profil:verify')
@@ -90,7 +90,7 @@ def login_view(request):
             profil.tasdiqla_kod = code
             profil.save()
 
-            print(code)
+            # print(code)
             # send_code(user.email, code)
 
             messages.success(request, f'Login muvaffaqiyatli. Tasdiqlash kodi yuborildi!  {code}')
