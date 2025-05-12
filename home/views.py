@@ -7,9 +7,6 @@ from profil.models import Profil
 
 
 def home_view(request):
-    # pr = Profil.objects.filter(user=request.user).first()
-    # if not request.user.is_authenticated:
-    #     return redirect('profil:login')
 
     today = datetime.today()
     haftalik_hisobot = []
