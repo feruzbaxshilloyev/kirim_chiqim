@@ -42,7 +42,6 @@ def tahrirlash(request):
     return render(request, 'tahrirlash.html', {'form': form})
 
 
-@login_required
 def register_view(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -76,7 +75,7 @@ def register_view(request):
     return render(request, 'register.html', {'form': form})
 
 
-@login_required
+
 def send_code(user_email, code):
     subject = 'Tasdiqlash kodi'
     message = f"Sizning tasdiqlash kodingiz: {code}"
@@ -84,7 +83,6 @@ def send_code(user_email, code):
     send_mail(subject, message, from_email, [user_email])
 
 
-@login_required
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
