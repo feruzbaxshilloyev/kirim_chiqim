@@ -9,6 +9,7 @@ class Profil(models.Model):
     tugilgan_sana = models.DateField(blank=True, null=True)
     telefon = models.CharField(max_length=20, blank=True, null=True)
     tasdiqla_kod = models.CharField(blank=True, null=True)
+    is_login = models.BooleanField(default=False)
     kod_vaqt = models.DateTimeField(auto_now=True)
 
     def __str__(self):

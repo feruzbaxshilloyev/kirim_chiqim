@@ -10,12 +10,18 @@ from django.contrib import messages
 
 @login_required
 def profil(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     profil = Profil.objects.filter(user=request.user).first()
     return render(request, 'profil.html', {'profil': profil})
 
 
 @login_required
 def tahrirlash(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     try:
         profil = Profil.objects.filter(user=request.user).first()
     except Profil.DoesNotExist:
@@ -106,10 +112,11 @@ def verify_view(request):
     if request.method == 'POST':
         kod = request.POST.get('kod')
         profil = Profil.objects.filter(user=request.user).order_by('-kod_vaqt').first()
-        print(profil.tasdiqla_kod)
-        print(profil.kod_vaqt)
+        # print(profil.tasdiqla_kod)
+        # print(profil.kod_vaqt)
         if profil.tasdiqla_kod == kod:
             messages.success(request, "Tasdiqlash muvaffaqiyatli.")
+            profil.is_login = True
             return redirect('profil:profil')
         else:
             messages.error(request, "Kod noto‘g‘ri.")
@@ -117,5 +124,7 @@ def verify_view(request):
 
 
 def logout_view(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    pr.is_login = False
     logout(request)
     return redirect('profil:login')

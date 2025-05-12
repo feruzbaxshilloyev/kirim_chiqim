@@ -4,9 +4,12 @@ from datetime import date, timedelta, datetime
 from kirim_chiqim.models import Kirim, Chiqim, Valyuta
 from django.db.models import Sum
 
+from profil.models import Profil
+
 
 def home_view(request):
-    if not request.user.is_authenticated:
+    pr = Profil.objects.filter(user=request.user).first()
+    if (not pr.is_login) and (not request.user.is_authenticated):
         return redirect('profil:login')
 
     today = datetime.today()

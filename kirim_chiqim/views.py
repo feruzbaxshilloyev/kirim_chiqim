@@ -3,11 +3,16 @@ from decimal import Decimal
 
 from django.db.models import Sum
 from django.shortcuts import render, redirect, get_object_or_404
+
+from profil.models import Profil
 from .models import Kirim, Chiqim, Valyuta, Kimdan, Uchun
 from .forms import HisobotFilterForm, ChiqimForm, KirimForm, ValyutaForm, UchunForm, KimdanForm, ValyutaKursForm
 
 
 def umumiy_hisobot(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     form = HisobotFilterForm(request.GET)
     user = request.user
     start_date = request.GET.get('start_date')
@@ -76,6 +81,9 @@ def umumiy_hisobot(request):
 
 
 def add_kirim(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     if request.method == 'POST':
         form = KirimForm(request.POST, user=request.user)
         if form.is_valid():
@@ -90,6 +98,9 @@ def add_kirim(request):
 
 
 def add_chiqim(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     if request.method == 'POST':
         form = ChiqimForm(request.POST, user=request.user)
         if form.is_valid():
@@ -104,6 +115,9 @@ def add_chiqim(request):
 
 
 def add_valyuta(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     if request.method == 'POST':
         form = ValyutaForm(request.POST)
         if form.is_valid():
@@ -118,6 +132,9 @@ def add_valyuta(request):
 
 
 def add_uchun(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     if request.method == 'POST':
         form = UchunForm(request.POST)
         if form.is_valid():
@@ -132,6 +149,9 @@ def add_uchun(request):
 
 
 def add_kimdan(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     if request.method == 'POST':
         form = KimdanForm(request.POST)
         if form.is_valid():
@@ -146,6 +166,9 @@ def add_kimdan(request):
 
 
 def kurs_kiritish(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     if request.method == 'POST':
         form = ValyutaKursForm(request.POST, user=request.user)
         if form.is_valid():
@@ -214,6 +237,9 @@ def kurs_kiritish(request):
 
 
 def kirim(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     start_date = request.GET.get('start_date')
     end_date = request.GET.get('end_date')
     valuta = request.GET.get('valuta')
@@ -267,6 +293,9 @@ def kirim(request):
 
 
 def chiqim(request):
+    pr = Profil.objects.filter(user=request.user).first()
+    if not pr.is_login:
+        return redirect('profil:login')
     start_date = request.GET.get('start_date')
     end_date = request.GET.get('end_date')
     valuta_id = request.GET.get('valuta')
