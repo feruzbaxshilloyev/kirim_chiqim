@@ -1,0 +1,237 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-13 16:38+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\hisobot\settings.py:151
+msgid "O‘zbek"
+msgstr ""
+
+#: .\hisobot\settings.py:152
+msgid "Rus"
+msgstr ""
+
+#: .\hisobot\settings.py:153
+msgid "Ingliz"
+msgstr ""
+
+#: .\home\templates\contact.html:6
+msgid "Biz bilan bog‘lanish"
+msgstr ""
+
+#: .\home\templates\contact.html:58
+msgid "Taklif va murojaat uchun:"
+msgstr "Suggestions and contact:"
+
+#: .\home\templates\contact.html:72
+msgid "Orqaga"
+msgstr "Back"
+
+#: .\home\templates\home.html:7 .\home\templates\home.html:64
+msgid "Umumiy Hisobot"
+msgstr "General Report"
+
+#: .\home\templates\home.html:67
+msgid "Valyutalarni hisoblash"
+msgstr "Calculate Currencies"
+
+#: .\home\templates\home.html:68
+msgid "Chiqim qo'shish"
+msgstr "Add Expense"
+
+#: .\home\templates\home.html:69
+msgid "Kirim qo'shish"
+msgstr "Add Income"
+
+#: .\home\templates\home.html:70
+msgid "Hisobot"
+msgstr "Report"
+
+#: .\home\templates\home.html:71
+msgid "Profil"
+msgstr "Profile"
+
+#: .\home\templates\home.html:72
+msgid "Bog'lanish"
+msgstr "Contact"
+
+#: .\home\templates\home.html:83
+msgid "Haftalik Hisobot"
+msgstr "Weekly Report"
+
+#: .\home\templates\home.html:85 .\home\templates\home.html:123
+#: .\home\templates\home.html:193
+msgid "Ko‘rsatish/Yashirish"
+msgstr "Show/Hide"
+
+#: .\home\templates\home.html:94 .\home\templates\home.html:132
+#: .\home\templates\home.html:202
+msgid "Sana"
+msgstr "Date"
+
+#: .\home\templates\home.html:95 .\home\templates\home.html:133
+#: .\home\templates\home.html:203
+msgid "Kirim"
+msgstr "Income"
+
+#: .\home\templates\home.html:96 .\home\templates\home.html:134
+#: .\home\templates\home.html:204
+msgid "Chiqim"
+msgstr "Expense"
+
+#: .\home\templates\home.html:108
+msgid "Haftalik hisobot mavjud emas"
+msgstr "No weekly report available"
+
+#: .\home\templates\home.html:121
+msgid "Oylik Hisobot"
+msgstr "Monthly Report"
+
+#: .\home\templates\home.html:146
+msgid "Oylik hisobot mavjud emas"
+msgstr "No monthly report available"
+
+#: .\home\templates\home.html:154
+msgid "Oylik sahifalash"
+msgstr "Monthly Pagination"
+
+#: .\home\templates\home.html:158 .\home\templates\home.html:228
+msgid "Oldingi"
+msgstr "Previous"
+
+#: .\home\templates\home.html:174 .\home\templates\home.html:244
+msgid "Keyingi"
+msgstr "Next"
+
+#: .\home\templates\home.html:191
+msgid "Yillik Hisobot"
+msgstr "Yearly Report"
+
+#: .\home\templates\home.html:216
+msgid "Yillik hisobot mavjud emas"
+msgstr "No yearly report available"
+
+#: .\home\templates\home.html:224
+msgid "Yillik sahifalash"
+msgstr "Yearly Pagination"
+
+#: .\home\templates\home.html:261
+msgid "Iltimos, hisobotlarni ko‘rish uchun"
+msgstr "Please log in to view reports"
+
+#: .\home\templates\home.html:261
+msgid "tizimga kiring"
+msgstr "log in"
+
+
+msgid "Eslatma:"
+msgstr "Note:"
+
+msgid "boshqa valyutadagi hisobotni ko'rish uchun filterlashdan foydalaning"
+msgstr "Use filtering to view reports in other currencies."
+
+msgid "Bosh sahifa"
+msgstr "Home Page"
+
+msgid "Boshlanish sanasi:"
+msgstr "Start Date:"
+
+msgid "Tugash sanasi:"
+msgstr "End Date:"
+
+msgid "Valyuta turi:"
+msgstr "Currency Type:"
+
+msgid "Majburiy"
+msgstr "Required"
+
+msgid "Hech narsa topilmadi"
+msgstr "Nothing found"
+
+msgid "Summa turi"
+msgstr "Amount Type"
+
+msgid "Barchasi"
+msgstr "All"
+
+msgid "Naqd"
+msgstr "Cash"
+
+msgid "Plastik"
+msgstr "Plastic"
+
+msgid "Bank"
+msgstr "Bank"
+
+msgid "Filtrlash"
+msgstr "Filter"
+
+msgid "Jami Kirim:"
+msgstr "Total Income:"
+
+msgid "Jami Chiqim:"
+msgstr "Total Expense:"
+
+msgid "Balans:"
+msgstr "Balance:"
+
+msgid "Kirimlar"
+msgstr "Incomes"
+
+msgid "Ko'rish"
+msgstr "View"
+
+msgid "+ Qo'shish"
+msgstr "+ Add"
+
+msgid "Qayerdan"
+msgstr "From"
+
+msgid "Summa"
+msgstr "Amount"
+
+msgid "Valyuta"
+msgstr "Currency"
+
+msgid "Kirimlar mavjud emas"
+msgstr "No incomes available"
+
+msgid "Chiqimlar"
+msgstr "Expenses"
+
+msgid "Qayerga"
+msgstr "To"
+
+msgid "Chiqimlar mavjud emas"
+msgstr "No expenses available"
+
+msgid "Foydalanuvchi:"
+msgstr "Username:"
+
+msgid "Telefon:"
+msgstr "Phone:"
+
+msgid "Manzil:"
+msgstr "Address:"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Profil ma’lumotlari topilmadi!"
+msgstr "Profile not found!"
+

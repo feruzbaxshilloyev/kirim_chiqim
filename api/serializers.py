@@ -76,10 +76,10 @@ class ChiqimSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Chiqim
-        fields = ['id', 'ulchun', 'sana', 'summa', 'summa_type', 'valuta', 'izoh']
+        fields = ['id', 'uchun', 'sana', 'summa', 'summa_type', 'valuta', 'izoh']
 
     def create(self, validated_data):
-        uchun_data = validated_data.pop('ulchun')
+        uchun_data = validated_data.pop('uchun')
         uchun = Uchun.objects.create(**uchun_data)
         valuta_data = validated_data.pop('valuta')
         valuta = Valyuta.objects.create(**valuta_data)

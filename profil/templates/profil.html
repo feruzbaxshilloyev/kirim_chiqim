@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -173,14 +174,14 @@
 
     {% if profil %}
         <div class="card shadow-sm">
-             <h2 class="text-primary">Profil</h2>
+             <h2 class="text-primary">{% trans "Profil" %}</h2>
             <div class="card-body text-center">
                 <!-- Profil rasmi -->
 <img src="{% if profil.rasm %}{{ profil.rasm.url }}{% else %}{% static 'profil_rasmlari/default.png' %}{% endif %}" alt="Profil rasmi" class="profile-img">                <h4 class="card-title mb-3">{{ request.user.get_full_name }}</h4>
-                <p><strong>Foydalanuvchi nomi:</strong> {{ request.user.username }}</p>
-                <p><strong>Email:</strong> {{ request.user.email }}</p>
-                <p><strong>Telefon:</strong> {{ profil.telefon }}</p>
-                <p><strong>Manzil:</strong> {{ profil.manzil }}</p>
+                <p><strong>{% trans "Foydalanuvchi:" %}</strong> {{ request.user.username }}</p>
+                <p><strong>{% trans "Email:" %}</strong> {{ request.user.email }}</p>
+                <p><strong>{% trans "Telefon:" %}</strong> {{ profil.telefon }}</p>
+                <p><strong>{% trans "Manzil:" %}</strong> {{ profil.manzil }}</p>
             </div>
         </div>
     {% else %}

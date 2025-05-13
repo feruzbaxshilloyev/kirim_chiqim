@@ -99,8 +99,8 @@ def add_kirim(request):
 
     return render(request, 'add_kirim.html', {'form': form})
 
-@login_required
 
+@login_required
 def add_chiqim(request):
     pr = Profil.objects.filter(user=request.user).first()
     if not pr.is_login:
@@ -117,8 +117,8 @@ def add_chiqim(request):
 
     return render(request, 'add_chiqim.html', {'form': form})
 
-@login_required
 
+@login_required
 def add_valyuta(request):
     pr = Profil.objects.filter(user=request.user).first()
     if not pr.is_login:
@@ -135,8 +135,8 @@ def add_valyuta(request):
 
     return render(request, 'add_valyuta.html', {'form': form})
 
-@login_required
 
+@login_required
 def add_uchun(request):
     pr = Profil.objects.filter(user=request.user).first()
     if not pr.is_login:
@@ -153,8 +153,8 @@ def add_uchun(request):
 
     return render(request, 'add_uchun.html', {'form': form})
 
-@login_required
 
+@login_required
 def add_kimdan(request):
     pr = Profil.objects.filter(user=request.user).first()
     if not pr.is_login:
@@ -171,8 +171,8 @@ def add_kimdan(request):
 
     return render(request, 'add_kimdan.html', {'form': form})
 
-@login_required
 
+@login_required
 def kurs_kiritish(request):
     pr = Profil.objects.filter(user=request.user).first()
     if not pr.is_login:
@@ -243,8 +243,8 @@ def kurs_kiritish(request):
 
     return render(request, 'kurs_kiritish.html', {'form': form})
 
-@login_required
 
+@login_required
 def kirim(request):
     pr = Profil.objects.filter(user=request.user).first()
     if not pr.is_login:
@@ -300,8 +300,8 @@ def kirim(request):
     }
     return render(request, 'kirim.html', context)
 
-@login_required
 
+@login_required
 def chiqim(request):
     pr = Profil.objects.filter(user=request.user).first()
     if not pr.is_login:
