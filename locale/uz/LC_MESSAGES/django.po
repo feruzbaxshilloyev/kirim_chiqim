@@ -235,3 +235,13 @@ msgstr "Email:"
 msgid "Profil ma’lumotlari topilmadi!"
 msgstr "Profil ma’lumotlari topilmadi!"
 
+msgid "Valyuta kurslarini kiriting"
+msgstr "Valyuta kurslarini kiriting"
+
+msgid "Asosiy valyuta:"
+msgstr "Asosiy valyuta:"
+
+msgid "Hisoblash"
+msgstr "Hisoblash"
+
+

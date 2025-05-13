@@ -236,3 +236,14 @@ msgstr "Электронная почта:"
 msgid "Profil ma’lumotlari topilmadi!"
 msgstr "Профиль не найден!"
 
+
+msgid "Valyuta kurslarini kiriting"
+msgstr "Введите курсы валют"
+
+msgid "Asosiy valyuta:"
+msgstr "Базовая валюта:"
+
+msgid "Hisoblash"
+msgstr "Рассчитать"
+
+
