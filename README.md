@@ -1,3 +1,7 @@
+## Emailga kod yuborish 
+
+Emailga kod yuborish qismini komentga olib qoydim chunki 2 bosqichli tekshiruv yoqishda raqam ulash muammo boldi 
+
 # Kirim-Chiqim Hisoboti Loyihasi
 
 Bu loyiha foydalanuvchining kundalik moliyaviy harajatlari va daromadlarini boshqarish uchun mo‘ljallangan. Foydalanuvchi o‘ziga tegishli valyutalarda kirim va chiqimlarni kiritadi hamda istalgan valyutani asos qilib tanlab, boshqa valyutalardagi miqdorlarni ushbu asosiy valyutaga konvertatsiya qilib umumiy hisobotni ko‘rishi mumkin.
