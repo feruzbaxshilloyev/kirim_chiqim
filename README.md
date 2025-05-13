@@ -7,7 +7,6 @@ Bu loyiha foydalanuvchining kundalik moliyaviy harajatlari va daromadlarini bosh
 - Django 5.2.1
 - SQLite (yoki boshqa DBMS)
 - HTML5, CSS3 (Bootstrap bilan)
-- Jinja templating engine
 
 ## 📌 Asosiy funksiyalar
 - Foydalanuvchi autentifikatsiyasi
