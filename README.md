@@ -1,6 +1,6 @@
 ## Emailga kod yuborish 
 
-Emailga kod yuborish qismini komentga olib qoydim chunki 2 bosqichli tekshiruv yoqishda raqam ulash muammo boldi 
+Emailga kod yuborish qismini komentga olib qoydim chunki 2 bosqichli tekshiruv yoqishda raqam ulash muammo boldi shuning uchun kodni messageda yubordim
 
 # Kirim-Chiqim Hisoboti Loyihasi
 
